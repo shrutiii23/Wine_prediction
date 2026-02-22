@@ -15,7 +15,7 @@ st.title("wine type prediction !")
 fixed_acidity = st.number_input("fixed_acidity")
 volatile_acidity = st.number_input("volatile_acidity")
 citric_acid = st.number_input("citric_acid")
-residual_sugar = st.number_input("citric_acid")
+residual_sugar = st.number_input("residual_sugar")
 chlorides = st.number_input("chlorides")
 free_sulfur_dioxide = st.number_input("free_sulfur_dioxide")
 total_sulfur_dioxide = st.number_input("total_sulfur_dioxide")
@@ -39,6 +39,8 @@ input_data = pd.DataFrame([[
     alcohol,
     quality
 ]], columns=model.feature_names_in_)
+
+
 if st.button("predict"):
     prediction = model.predict(input_data)[0]
     if prediction == "white":
